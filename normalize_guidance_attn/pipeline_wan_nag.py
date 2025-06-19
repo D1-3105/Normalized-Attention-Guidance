@@ -7,7 +7,7 @@ from diffusers.utils import is_torch_xla_available, logging, replace_example_doc
 from diffusers.pipelines.wan.pipeline_output import WanPipelineOutput
 from diffusers.pipelines.wan.pipeline_wan import WanPipeline
 
-from src.attention_wan_nag import NAGWanAttnProcessor2_0
+from normalize_guidance_attn.attention_wan_nag import NAGWanAttnProcessor2_0
 
 if is_torch_xla_available():
     import torch_xla.core.xla_model as xm

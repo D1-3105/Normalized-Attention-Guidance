@@ -12,8 +12,8 @@ from diffusers.utils import is_torch_xla_available
 from diffusers.pipelines.flux.pipeline_output import FluxPipelineOutput
 from diffusers.models.normalization import AdaLayerNormZero, AdaLayerNormContinuous
 
-from src.attention_flux_nag import NAGFluxAttnProcessor2_0
-from src.normalization import TruncAdaLayerNormZero, TruncAdaLayerNormContinuous
+from normalize_guidance_attn.attention_flux_nag import NAGFluxAttnProcessor2_0
+from normalize_guidance_attn.normalization import TruncAdaLayerNormZero, TruncAdaLayerNormContinuous
 
 if is_torch_xla_available():
     import torch_xla.core.xla_model as xm
