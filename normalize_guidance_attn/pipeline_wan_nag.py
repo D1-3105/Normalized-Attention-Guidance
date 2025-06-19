@@ -8,6 +8,7 @@ from diffusers.pipelines.wan.pipeline_output import WanPipelineOutput
 from diffusers.pipelines.wan.pipeline_wan import WanPipeline
 
 from normalize_guidance_attn.attention_wan_nag import NAGWanAttnProcessor2_0
+from normalize_guidance_attn.transformer_wan_nag import NagWanTransformer3DModel
 
 if is_torch_xla_available():
     import torch_xla.core.xla_model as xm
@@ -20,6 +21,11 @@ logger = logging.get_logger(__name__)  # pylint: disable=invalid-name
 
 
 class NAGWanPipeline(WanPipeline):
+
+    @property
+    def transformer_class(self):
+        return NagWanTransformer3DModel
+
     @property
     def do_normalized_attention_guidance(self):
         return self._nag_scale > 1
