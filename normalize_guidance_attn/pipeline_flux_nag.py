@@ -14,6 +14,7 @@ from diffusers.models.normalization import AdaLayerNormZero, AdaLayerNormContinu
 
 from normalize_guidance_attn.attention_flux_nag import NAGFluxAttnProcessor2_0
 from normalize_guidance_attn.normalization import TruncAdaLayerNormZero, TruncAdaLayerNormContinuous
+from normalize_guidance_attn.transformer_flux import NAGFluxTransformer2DModel
 
 if is_torch_xla_available():
     import torch_xla.core.xla_model as xm
@@ -44,6 +45,10 @@ class NAGFluxPipeline(FluxPipeline):
                 encoder_hidden_states_length=encoder_hidden_states_length,
             )
         self.transformer.set_attn_processor(attn_procs)
+
+    @property
+    def transformer_class(self):
+        return NAGFluxTransformer2DModel
 
     @torch.no_grad()
     def __call__(
