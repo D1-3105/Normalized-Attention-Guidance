@@ -1,0 +1,23 @@
+[project]
+name = "Normalized_Attention_Guidance"
+version = "0.1.0"
+description = "NAG"
+authors = [
+    { name = "D1-3105", email = "lyerhd@gmail.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    # Add runtime dependencies here
+    "accelerate",
+    "diffusers",
+    "torch",
+    "transformers",
+    "sentencepiece",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
