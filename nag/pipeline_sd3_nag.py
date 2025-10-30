@@ -16,8 +16,8 @@ from diffusers.pipelines.stable_diffusion_3.pipeline_stable_diffusion_3 import (
 )
 from diffusers.models.normalization import AdaLayerNorm, AdaLayerNormContinuous, AdaLayerNormZero, SD35AdaLayerNormZeroX
 
-from src.attention_joint_nag import NAGJointAttnProcessor2_0
-from src.normalization import TruncAdaLayerNorm, TruncAdaLayerNormZero, TruncAdaLayerNormContinuous, TruncSD35AdaLayerNormZeroX
+from nag.attention_joint_nag import NAGJointAttnProcessor2_0
+from nag.normalization import TruncAdaLayerNorm, TruncAdaLayerNormZero, TruncAdaLayerNormContinuous, TruncSD35AdaLayerNormZeroX
 
 
 if is_torch_xla_available():
